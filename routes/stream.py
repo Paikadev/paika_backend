@@ -6,11 +6,11 @@ from config.db import conn
 stream = APIRouter()
 
 
-@stream.get("/interactions", response_model=list[Stream], tags=["Streams"])
+@stream.get("/interactions" )
 def get_streams():
     return conn.execute(streams.select()).fetchall()
 
-@stream.post("/interaction", response_model= Stream, tags=["Streams"])
+@stream.post("/interaction")
 def create_stream(stream: Stream):
     new_stream = {"id": stream.id,"id_interaction": stream.id_interaction}
     result = conn.execute(streams.insert().values(new_stream))

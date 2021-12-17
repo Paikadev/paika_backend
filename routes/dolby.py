@@ -19,7 +19,7 @@ def get_token():
     return response.json()["access_token"]
 
 
-@dolby.post("/dolby/rtmp/{id}",tags=["Rtmp"])
+@dolby.post("/dolby/rtmp/{id}")
 def stream_rtmp(id: str):
     key = "cCtj_wIfvRnmfeUnDpskxQ=="
     secret = "s-Lo5yY_UXWc4VPVSJz0rooEwI4_AcG7OqDwP3zK7Do="
