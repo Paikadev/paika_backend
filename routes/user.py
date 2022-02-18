@@ -22,7 +22,7 @@ def create_user(user: User):
 def get_user(id: str):
     return conn.execute(users.select().where(users.c.id == id)).first()
 
-@user.delete("/users/{id}", status_code= status.HTTP_204_NO_CONTENT, tags=["Users"])
+@user.delete("/users/{id}", status_code= status.HTTP_204_NO_CONTENT)
 def delete_user(id: str):
     conn.execute(users.delete().where(users.c.id == id))
     return Response(status_code= HTTP_204_NO_CONTENT)
