@@ -5,6 +5,10 @@ from routes.interaction import interaction
 from routes.stream import stream
 from fastapi.middleware.cors import CORSMiddleware
 
+import os
+
+
+
 app = FastAPI(
     title="Paika API",
     version= "0.1 beta",
@@ -30,7 +34,10 @@ app.add_middleware(
 async def main():
     return {"message": "Hello World"}
 
+
+
 app.include_router(user)
 app.include_router(dolby)
 app.include_router(interaction)
 app.include_router(stream)
+
